@@ -1,0 +1,146 @@
+import styled, { keyframes } from "styled-components";
+
+const messageFadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+export const LottieFullscreenOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  & canvas {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+`;
+
+export const Page = styled.main`
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fad0c4 100%);
+  padding: 1.5rem;
+`;
+
+export const Card = styled.div`
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  text-align: center;
+`;
+
+export const TeddyImageWrapper = styled.div`
+  margin: 0 auto 1.5rem;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  border: 3px solid #fecfef;
+  padding: 10px;
+  flex-shrink: 0;
+`;
+
+export const TeddyImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+export const Message = styled.p`
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #2d2d2d;
+  font-weight: 500;
+  opacity: 0;
+  animation: ${messageFadeIn} 0.6s ease-out forwards;
+`;
+
+export const Name = styled.span`
+  color: #e91e63;
+  font-weight: 700;
+  text-transform: capitalize;
+`;
+
+export const ButtonsRow = styled.div`
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+`;
+
+export const YesButton = styled.button`
+  padding: 0.875rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e91e63, #f06292);
+  color: white;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.5);
+  }
+`;
+
+interface NoButtonWrapperProps {
+  $left: number;
+  $top: number;
+}
+
+export const NoMovementArea = styled.div``;
+
+export const NoButtonWrapper = styled.div<NoButtonWrapperProps>`
+  position: absolute;
+  left: calc(${(p) => p.$left}px - 30px);
+  top: calc(${(p) => p.$top}px - 30px);
+  padding: 30px;
+  transition:
+    left 0.15s ease-out,
+    top 0.15s ease-out;
+`;
+
+export const NoButton = styled.button`
+  padding: 4px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: 2px solid rgb(193, 185, 188);
+  border-radius: 12px;
+  background: white;
+  color: rgb(193, 185, 188);
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+`;
+
+export const HappyMessage = styled.div(()=>({
+  marginTop: "2rem",
+}))
