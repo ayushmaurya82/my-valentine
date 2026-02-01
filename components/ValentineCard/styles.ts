@@ -56,6 +56,7 @@ export const Footer = styled.footer`
   text-align: center;
   font-size: 0.875rem;
   color: rgba(45, 45, 45, 0.8);
+  user-select: none;
 
   a {
     color: #e91e63;
