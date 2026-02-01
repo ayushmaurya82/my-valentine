@@ -19,26 +19,60 @@ export const LottieFullscreenOverlay = styled.div`
   background: rgba(0, 0, 0, 0.6);
   & canvas {
     width: 100vw !important;
+    width: 100svw !important;
     height: 100vh !important;
+    height: 100svh !important;
     max-width: 100vw;
     max-height: 100vh;
+    max-height: 100svh;
   }
 `;
 
-export const Page = styled.main`
+export const PageWrapper = styled.div`
+  height: 100vh;
+  height: 100svh;
   min-height: 100vh;
+  min-height: 100svh;
+  max-height: 100vh;
+  max-height: 100svh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fad0c4 100%);
+`;
+
+export const Page = styled.main`
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fad0c4 100%);
   padding: 1.5rem;
+`;
+
+export const Footer = styled.footer`
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgba(45, 45, 45, 0.8);
+
+  a {
+    color: #e91e63;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 export const Card = styled.div`
   position: relative;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 24px;
-  padding: 3rem 2.5rem;
+  padding: 2rem;
   max-width: 420px;
   width: 100%;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
@@ -70,6 +104,7 @@ export const Message = styled.p`
   font-weight: 500;
   opacity: 0;
   animation: ${messageFadeIn} 0.6s ease-out forwards;
+  user-select: none;
 `;
 
 export const Name = styled.span`
@@ -144,3 +179,4 @@ export const NoButton = styled.button`
 export const HappyMessage = styled.div(()=>({
   marginTop: "2rem",
 }))
+

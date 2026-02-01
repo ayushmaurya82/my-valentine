@@ -23,3 +23,5 @@ export const TEDDY_IMAGE_URL = "/teddy-valentine1.png";
 
 /** Two teddies shown when user clicks Yes, white BG */
 export const TEDDY_IMAGE_URL_YES = "/teddy-valentine12.png";
+
+export const INSTAGRAM_HANDLE = "buildtoscript";

@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from "react";
 import {
   ButtonsRow,
   Card,
+  Footer,
   HappyMessage,
   LottieFullscreenOverlay,
   Message,
@@ -9,12 +10,14 @@ import {
   NoButton,
   NoButtonWrapper,
   Page,
+  PageWrapper,
   TeddyImage,
   TeddyImageWrapper,
   YesButton,
 } from "./styles";
 import {
   DEFAULT_NAME,
+  INSTAGRAM_HANDLE,
   INITIAL_NO_BUTTON_POSITION,
   MOVE_THROTTLE_MS,
   NO_BUTTON_MOVE_OFFSET,
@@ -171,7 +174,10 @@ const ValentineCard = ({ name = DEFAULT_NAME }: ValentineCardProps) => {
     setShowLottie(true);
   }, [yesClicked]);
 
+  const currentYear = new Date().getFullYear();  
+
   return (
+    <PageWrapper>
     <Page>
       <Card ref={cardRef}>
         <TeddyImageWrapper>
@@ -226,6 +232,17 @@ const ValentineCard = ({ name = DEFAULT_NAME }: ValentineCardProps) => {
         )}
       </Card>
     </Page>
+    <Footer>
+      © {currentYear} Your Valentine .{" "}
+      <a
+       href={`https://instagram.com/${INSTAGRAM_HANDLE}`}
+       target="_blank"
+       rel="noopener noreferer"
+      >
+        @{INSTAGRAM_HANDLE}
+      </a>
+    </Footer>
+    </PageWrapper>
   );
 };
 
