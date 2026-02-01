@@ -95,6 +95,7 @@ export const TeddyImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  user-select: none;
 `;
 
 export const Message = styled.p`
@@ -136,6 +137,7 @@ export const YesButton = styled.button`
     transform 0.2s,
     box-shadow 0.2s;
   box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+  user-select: none;
 
   &:hover {
     transform: scale(1.05);
@@ -170,6 +172,7 @@ export const NoButton = styled.button`
   color: rgb(193, 185, 188);
   cursor: pointer;
   transition: transform 0.2s;
+  user-select: none;
 
   &:hover {
     transform: scale(1.02);
