@@ -62,6 +62,8 @@ export const Footer = styled.footer`
     color: #e91e63;
     text-decoration: none;
     font-weight: 600;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
 
     &:hover {
       text-decoration: underline;
