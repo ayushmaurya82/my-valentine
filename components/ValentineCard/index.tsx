@@ -235,7 +235,7 @@ const ValentineCard = ({ name = DEFAULT_NAME }: ValentineCardProps) => {
     <Footer>
       © {currentYear} Your Valentine .{" "}
       <a
-       href={`https://instagram.com/${INSTAGRAM_HANDLE}`}
+       href={`https://www.instagram.com/${INSTAGRAM_HANDLE}/`}
        target="_blank"
        rel="noopener noreferer"
       >
