@@ -30,6 +30,14 @@ body {
   -ms-user-select: none;
 }
 
+html:not(.ready) body #__next {
+  opacity: 0;
+}
+html.ready body #__next {
+  opacity: 1;
+  transition: opacity 0.12s ease-out;
+}
+
 @import "tailwindcss";
 
 :root {

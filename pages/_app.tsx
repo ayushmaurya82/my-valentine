@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -14,7 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return (
+
+  useEffect(() => {
+    document.documentElement.classList.add("ready");
+  }, []);
+ 
+ return (
     <>
       <Head>
         <title>My Valentine</title>
